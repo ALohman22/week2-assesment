@@ -103,7 +103,7 @@ let foodArr = [
         category: 'thinCrust',
         popularity: 10,
         rating: 10,
-        tags: 'classic'
+        tags: ['classic','regular']
 },
 {
     name: 'pepperoni',
@@ -111,7 +111,7 @@ let foodArr = [
     category: 'Chicago-style',
     popularity: 10,
     rating: 10,
-    tags: 'Deep Dish'
+    tags: ['Deep Dish','regular']
 },
 {
     name: 'Cheese',
@@ -119,23 +119,23 @@ let foodArr = [
     category: 'Picky eaters',
     popularity: 10,
     rating: 10,
-    tags: 'classic'
+    tags: ['classic','regular']
 },
 {
     name: 'veggie',
     price: 6,
     category: 'thinCrust',
-    popularity: 10,
-    rating: 10,
-    tags: 'hateYourLife'
+    popularity: 1,
+    rating: 2,
+    tags: ['hateYourLife', 'diet']
 },
 {
     name: 'vegan',
     price: 12,
     category: 'gross',
-    popularity: 10,
-    rating: 10,
-    tags: 'justWhy'
+    popularity: 0,
+    rating: 0,
+    tags: ['justWhy','stop']
 }]
 
 
@@ -153,9 +153,8 @@ let foodArr = [
 */
 
 //CODE HERE
-// not sure what happened here. i ran out of time and had to move on. i could only get it to wot if the tags key was a string and not an array of strings.
-const filteredFood = foodArr.filter(element=>{
-   return element.tags === 'classic'
+const filteredFood = foodArr.filter((element)=>{
+   return element.tags.includes('stop')
     
 })
 
@@ -201,15 +200,18 @@ const filteredFood = foodArr.filter(element=>{
 */
 
 //CODE HERE
-//// some serious blanking going on here due to time im going to have to move on.
+// some serious blanking going on here due to time im going to have to move on.
 const filterByProperty =(property, number, type)=>{
-   if(property >= number){
-   return type ===
-   }
-    }
-    
-filterByProperty('foodArr.price',15)
-cpnsole.log(filteredArr)
+    let filteredArr = foodArr.filter((element)=>{
+        if(type === 'below'){
+            return element[property] < number
+        } else {
+            return element[property] > number
+        }
+    })
+}
+   
+console.log(filterByProperty('price',10, 'below'))
 /*
     Invoke the `filterByProperty` function passing
     in a value for each paramter.

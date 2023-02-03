@@ -57,10 +57,10 @@ const summedPrice = cart.reduce((acc, curr)=>{
 
 //CODE HERE
 const calcFinalPrice = (total,couValue,taxArg)=>{
-total = (total + total * taxArg) - couValue
-return total
+total = (total + (total * taxArg)) - couValue
+return total.toFixed(2)
 }
-// console.log(calcFinalPrice(17.76,5,0.07))
+console.log(calcFinalPrice(17.76,5,0.07))
 
 //////////////////PROBLEM 3////////////////////
 /*  
@@ -85,10 +85,10 @@ return total
 /*
     TEXT ANSWER HERE
 customer obj:
-name: oviously they need a name to start with
-age: gives an idea on what kind of customet demographics they recieve
-city: i think it would be nice to know where their customers are coming from
-usual: if they hav a usual food they order it would help check if the menu needs improved
+name: oviously they need a name to start with --string
+age: gives an idea on what kind of customet demographics they recieve --number
+city: i think it would be nice to know where their customers are coming from --string
+usual: if they hav a usual food they order it would help check if the menu needs improved--string
 
 */
 
@@ -103,5 +103,5 @@ let Customer = {
         name: "Mike",
         age: 29,
         city: 'nowhersville',
-        usual: 'comb #6'
+        usual: ['comb #6', 'fries']
 }

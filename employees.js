@@ -26,7 +26,7 @@ class Employee {
         this.shift = shift
     }
     getScheduled(){
-    console.log(`${this.name} works on ${this.shift}`)
+    return `${this.name} works on ${this.shift}`
     }
 }
 
@@ -42,14 +42,14 @@ class Employee {
 */
 
 //CODE HERE
-let empOne = new Employee('Jess', 'Weekday Mornings and Weekend Afternoons')
+let empOne = new Employee('Jess', ['Weekday Mornings', 'Weekend Afternoons'])
 /*
     Call the `getSchedule` method on the
     `empOne` object.
 */
 
 //CODE HERE
-// empOne.getScheduled()
+// console.log(empOne.getScheduled())
 
 
 
@@ -66,10 +66,10 @@ let empOne = new Employee('Jess', 'Weekday Mornings and Weekend Afternoons')
 */
 
 //CODE HERE
-empTwo = {...empOne}
+empTwo = {...empOne,name}
 empTwo.name = 'Nick'
 // console.log(empTwo)
-
+// empTwo = {...empOne,name:'Nick'}
 //////////////////PROBLEM 2////////////////////
 /*  
     Write a class called Manager that *extends* 
@@ -100,13 +100,13 @@ class Manager extends Employee{
         this.employees = employees
     }
     getEmployees(){
-        console.log(`${this.name} manages ${this.employees}`)
+       return `${this.name} manages ${this.employees}`
     }
     addEmployee(emp){
         this.employees.push(emp)
     }
 }
-// console.log(empArr)
+console.log(empArr)
 /*
     Create a new instance of your class.
     Save it to a variable called `manager`.
@@ -128,6 +128,7 @@ let manOne = new Manager('Winston','Weekday Mornings and Weekend Afternoons',['C
 
 //CODE HERE
 manOne.getEmployees()
+console.log(Manager.getEmployees())
 /*
     Call the `addEmployee` method on the 
     `manager` object passing in the string 
@@ -145,3 +146,4 @@ manOne.addEmployee('Coach')
 
 //CODE HERE
 manOne.getEmployees()
+console.log(Manager.getEmployees())

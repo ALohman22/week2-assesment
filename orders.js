@@ -57,7 +57,7 @@ class Ticket{
 */
 
 //CODE HERE
-let firstTicket = new Ticket('pizza, bread, and soda','7:03 PM',575)
+let firstTicket = new Ticket(['pizza', 'bread', 'soda'],'7:03 PM',575)
 
 /*
     Call the `updateStatus` method on
