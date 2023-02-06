@@ -119,7 +119,7 @@ console.log(empArr)
 */
 
 //CODE HERE
-let manOne = new Manager('Winston','Weekday Mornings and Weekend Afternoons',['Cece', 'Schmidt'])
+let manOne = new Manager('Winston',['Weekday Mornings', 'Weekend Afternoons'],['Cece', 'Schmidt'])
 
 /*
     Call the `getEmployees` method on the
